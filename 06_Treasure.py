@@ -1,17 +1,25 @@
 import time
+import os
 
-# print("-------------------------------------------------------------------")
+#  Here we create a function that clear the console ,when user passes the each level
+def clear_console():
+    """Clears the console screen."""
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+clear_console()
+print("-------------------------------------------------------------------")
 print("                  Welcome to the python Treasure Game. ")
 print("-------------------------------------------------------------------")
 print("Your today's task is to find a treasure that's buried somewhere on land.")
 print("Now, you are on the road, and you have two paths to start your journey:\nLeft 'L' and Right 'R'.")
-path = input("Select your path here: ")
+path = input("Select your path here: ").lower()
 
-if path == "L":
+if path == "l":
+    value = 0
     print("You are on your way to your destination...")
     time.sleep(5)
     print("-------------------------------------------------------------------")
-    print("                       Location: Lahore                  ")
+    print(f" Location: Lahore                                    Score:{value}")
     print("-------------------------------------------------------------------")
     print("You chose the left path to start your journey.\nYou have reached Lahore.")
     print("Which way would you like to travel further?")
@@ -23,14 +31,14 @@ if path == "L":
 
     # Level 1 choice starts here
     level_1 = int(input("Enter number to choose one of them: "))
-    value = 0
 
     if level_1 == 1:
         print("You are on your way to your destination...")
         time.sleep(5)
+        clear_console()
         print("\n-------------------------------------------------------------------")
-        print("                       Location: Lahore Tunnel                  ")
-        print("-------------------------------------------------------------------")
+        print(f"Location: Lahore Tunnel                                Score:{value}")
+        print("---------------------------------------------------------------------")
         print("\n\n         Oops! You died due to encountering snakes in the tunnel.")
         print("         The tunnel has been closed for a long time.")
         print("                       GAME OVER !!\n\n")
@@ -42,8 +50,9 @@ if path == "L":
     elif level_1 == 2:
         print("You are on your way to your destination...")
         time.sleep(5)
+        clear_console()
         print("-------------------------------------------------------------------")
-        print("                       Location: Lahore Bridge                 ")
+        print(f"Location: Lahore Bridge                              Score:{value}")
         print("-------------------------------------------------------------------")
         print("\n\n         Oops! You died due to the collapse of the bridge.")
         print("         The bridge was blasted by the constructors to rebuild it.")
@@ -57,9 +66,10 @@ if path == "L":
         print("You are on your way to your destination...")
         time.sleep(5)        
         value = 20000
-        print("\n\n-------------------------------------------------------------------")
-        print("                       Location: Inside City                ")
-        print("-------------------------------------------------------------------")
+        clear_console()
+        print("\n\n---------------------------------------------------------------------")
+        print(f"Location: Inside City                                    Score:{value}")
+        print("-----------------------------------------------------------------------")
         print("\n            Congratulations! You have passed the first level.")
         print("                   Now, you have reached inside the city.")
         print("\nWhich way would you like to travel further?")
@@ -72,10 +82,11 @@ if path == "L":
         level_2 = int(input("Enter number to choose one of them: "))
         if level_2 == 1:
             print("You are on your way to your destination...")
-            time.sleep(5)        
+            time.sleep(5)
+            clear_console()        
             print("\n\n-------------------------------------------------------------------")
-            print("                 Location: Inside City on road                ")
-            print("-------------------------------------------------------------------")
+            print(f"Location: Inside City on road                            Score:{value}")
+            print("-----------------------------------------------------------------------")
             print("\n\n            Oops! You died due to a road accident.")
             print("       The road was slippery,  your car collided with a truck.\n")
             print("                         GAME OVER !!\n")
@@ -87,10 +98,11 @@ if path == "L":
         elif level_2 ==2:
             print("You are on your way to your destination...")
             time.sleep(5)        
+            clear_console()
             value +=20000
-            print("\n\n-------------------------------------------------------------------")
-            print("                  Location: Village               ")
-            print("-------------------------------------------------------------------")
+            print("\n\n---------------------------------------------------------------------")
+            print(f"Location: Village                                        Score:{value}")
+            print("-----------------------------------------------------------------------")
             print("\n            Congratulations! You have passed the second level.")
             print("                   Now, you have reached the village ")
             print("\nWhich way would you like to travel further?")
@@ -104,10 +116,11 @@ if path == "L":
             if level_3==1:
                 print("You are on your way to your destination...")
                 time.sleep(5) 
+                clear_console()
                 value +=20000
-                print("\n\n-------------------------------------------------------------------")
-                print("                  Location: Island               ")
-                print("-------------------------------------------------------------------")
+                print("\n\n----------------------------------------------------------------------")
+                print(f"Location: Island                                         Score:{value}")
+                print("-----------------------------------------------------------------------")
                 print("\n            Congratulations! You have passed the third level.")
                 print("                   Now, you have reached the village ")
                 print("\nWhich way would you like to travel further?")
@@ -121,9 +134,10 @@ if path == "L":
                 if level_4==1:
                     print("You are on your way to your destination...")
                     time.sleep(5)
+                    clear_console()
                     print("\n\n-------------------------------------------------------------------")
-                    print("                 Location:Cav 1  A Fight for Survival            ")
-                    print("-------------------------------------------------------------------")
+                    print(f"Location:A Fight for Survival                            Score:{value}")
+                    print("-----------------------------------------------------------------------")
                     print("\n\nOops! You tragically lost your life in a relentless attack by a Reptiles")
                     print(''' Within the depths of the foreboding cave, you  encountered a swarm of deadly
 reptiles. Overwhelmed by their relentless assault, you succumbed
@@ -137,12 +151,10 @@ to their venomous strikes,and died there.\n ''')
                 elif level_4==2:
                     print("You are on your way to your destination...")
                     time.sleep(10)
-                    value+=20000
-                    winning=1000000
-                    total=1000000+value
+                    clear_console()
                     print("\n\n-------------------------------------------------------------------")
-                    print("                     Location: Treasure")
-                    print("-------------------------------------------------------------------")
+                    print(f"Location: Treasure                                       Score:{value}")
+                    print("-----------------------------------------------------------------------")
                     print("                     Congratulations!!\n")
                     print("\n          You have finally reached your destination!\n          You have discovered a hidden treasure!")
                    
@@ -150,6 +162,7 @@ to their venomous strikes,and died there.\n ''')
                     while True:
                         user_input = input("Press Enter to see your Treasure or 'q' to quit: ")
                         time.sleep(5)
+                        clear_console()
                         if user_input == "":
                             print("Continuing program execution...")
                             print('''
@@ -174,6 +187,9 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 /______/______/______/______/______/______/______/______/______/______/_____ /
 *******************************************************************************
 ''')
+                            value+=20000
+                            winning=1000000
+                            total=1000000+value
                             # Add your code here for the desired actions to be performed
                             print(f"             Your Bonus Amount   : ${value}")
                             print(f"             Your Winning Amount : ${winning}")
@@ -191,9 +207,10 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
                 elif level_4==3:
                     print("You are on your way to your destination...")
                     time.sleep(5)
+                    clear_console()
                     print("\n\n-------------------------------------------------------------------")
-                    print("                      Location:Cave 3 Forest              ")
-                    print("-------------------------------------------------------------------")
+                    print(f"Location:Forest                                          Score:{value}")
+                    print("-----------------------------------------------------------------------")
                     print("\n\n Oops! Your life was tragically  finished  by a fierce lion attack.")
                     print('''As you venture deep into the untamed forest , a sudden encounter with
 a pride of hungry lions brought a swift and tragic end to your journey.\n''')
@@ -209,9 +226,10 @@ a pride of hungry lions brought a swift and tragic end to your journey.\n''')
             elif level_3==2:
                 print("You are on your way to your destination...")
                 time.sleep(5)
+                clear_console()
                 print("\n\n-------------------------------------------------------------------")
-                print("                 Location: Village in the Underground Apartment               ")
-                print("-------------------------------------------------------------------")
+                print(f"Location: Village in the Underground Apartment           Score:{value}")
+                print("-----------------------------------------------------------------------")
                 print("\n\nOops! You  died  due to  tragically claimed by an electric short circuit.")
                 print('''Unaware of the hidden peril, you entered the secluded underground apartment.
 Little  you know, the pathway you followed led you to room where fire is 
@@ -225,9 +243,10 @@ burning , where you met you untimely demise, forever consumed by the depths.\n''
             elif level_3==3:
                 print("You are on your way to your destination...")
                 time.sleep(5)
+                clear_console()
                 print("\n\n-------------------------------------------------------------------")
-                print("                 Location: Village in the Creepy Cave               ")
-                print("-------------------------------------------------------------------")
+                print(f"Location: Village in the Creepy Cave                     Score:{value}")
+                print("-----------------------------------------------------------------------")
                 print("\n\nOops! Your life was tragically lost in a cave explosion.")
                 print('''Unaware of the impending peril, you courageously ventured into the 
 captivating cave. Suddenly, a mighty blast reverberated through the 
@@ -244,10 +263,11 @@ ending your life beneath  the weight of the rubble.\n''')
 
         elif level_2==3:
             print("You are on your way to your destination...")
-            time.sleep(5)     
+            time.sleep(5)
+            clear_console()     
             print("\n\n-------------------------------------------------------------------")
-            print("                 Location: Inside City in the Airplane               ")
-            print("-------------------------------------------------------------------")
+            print(f"Location: Inside City in the Airplane                    Score:{value}")
+            print("-----------------------------------------------------------------------")
             print("\n\n            Oops! You died due to a faulty engine.")
             print("       Airplane became unstable and a flash hit the engine\n")
             print("                         GAME OVER !!\n")
